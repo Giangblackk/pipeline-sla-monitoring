@@ -5,7 +5,6 @@ setup(
     packages=find_packages(exclude=["sample_pipeline_sla_tests"]),
     install_requires=[
         "dagster",
-        "dagster-cloud"
     ],
     extras_require={"dev": ["dagster-webserver", "pytest"]},
 )
