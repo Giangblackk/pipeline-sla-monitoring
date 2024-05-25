@@ -12,6 +12,8 @@ authors = [
     {name = "giangblackk", email = "giangblackk@gmail.com"},
 ]
 dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn>=0.29.0",
     "apscheduler>=3.10.4",
 ]
 requires-python = ">=3.8"
