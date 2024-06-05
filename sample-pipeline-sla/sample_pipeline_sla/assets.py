@@ -2,6 +2,7 @@ from dagster import asset, Config, get_dagster_logger
 import time
 import aiohttp
 from typing import Optional
+from datetime import datetime
 
 
 class TaskRunTimeConfig(Config):
@@ -15,7 +16,7 @@ JOB_STATUS_URL = "http://localhost:8000/job/status"
 async def log_task_status(task_name: str, status: str):
     async with aiohttp.ClientSession() as session:
         await session.post(
-            JOB_STATUS_URL, json={"task_name": task_name, "status": status}
+            JOB_STATUS_URL, json={"task_name": task_name, "status": status, "event_time": datetime.now().isoformat()}
         )
 
 
