@@ -4,6 +4,15 @@ main = ["pdm"]
 [tool.pdm]
 distribution = true
 
+[tool.pdm.dev-dependencies]
+dev = [
+    "pytest>=8.2.2",
+]
+dagster = [
+    "dagster>=1.6.5",
+    "aiohttp>=3.9.5",
+    "dagster-webserver>=1.6.5",
+]
 [project]
 name = "sla_monitoring"
 version = "0.1.0"
@@ -13,11 +22,10 @@ authors = [
 ]
 dependencies = [
     "apscheduler>=3.10.4",
-    "kedro-viz>=9.0.0",
     "fastapi>=0.111.0",
     "uvicorn>=0.29.0",
 ]
-requires-python = ">=3.10"
+requires-python = "<3.13,>=3.8"
 readme = "README.md"
 license = {text = "MIT"}
 
