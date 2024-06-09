@@ -8,6 +8,7 @@ distribution = true
 dev = [
     "pytest>=8.2.2",
     "isort>=5.13.2",
+    "matplotlib>=3.7.5",
 ]
 dagster = [
     "dagster>=1.6.5",
