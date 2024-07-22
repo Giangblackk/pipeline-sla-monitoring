@@ -1,0 +1,217 @@
+{
+  "nodes": [
+    {
+      "id": "94112458",
+      "name": "preprocess_companies_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "task",
+      "modular_pipelines": [],
+      "parameters": {}
+    },
+    {
+      "id": "aed46479",
+      "name": "companies",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "data",
+      "modular_pipelines": [],
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset",
+      "stats": null
+    },
+    {
+      "id": "493ad53a",
+      "name": "preprocessed_companies",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "data",
+      "modular_pipelines": [],
+      "layer": null,
+      "dataset_type": "pandas.parquet_dataset.ParquetDataset",
+      "stats": null
+    },
+    {
+      "id": "acdb05cf",
+      "name": "preprocess_shuttles_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "task",
+      "modular_pipelines": [],
+      "parameters": {}
+    },
+    {
+      "id": "f1d596c2",
+      "name": "shuttles",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "data",
+      "modular_pipelines": [],
+      "layer": null,
+      "dataset_type": "pandas.excel_dataset.ExcelDataset",
+      "stats": null
+    },
+    {
+      "id": "c071dac9",
+      "name": "preprocessed_shuttles",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "data",
+      "modular_pipelines": [],
+      "layer": null,
+      "dataset_type": "pandas.parquet_dataset.ParquetDataset",
+      "stats": null
+    },
+    {
+      "id": "28754fab",
+      "name": "create_model_input_table_node",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "task",
+      "modular_pipelines": [],
+      "parameters": {}
+    },
+    {
+      "id": "7b2c6e04",
+      "name": "reviews",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "data",
+      "modular_pipelines": [],
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset",
+      "stats": null
+    },
+    {
+      "id": "23c94afb",
+      "name": "model_input_table",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "data",
+      "modular_pipelines": [],
+      "layer": null,
+      "dataset_type": "pandas.parquet_dataset.ParquetDataset",
+      "stats": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "493ad53a",
+      "target": "28754fab"
+    },
+    {
+      "source": "acdb05cf",
+      "target": "c071dac9"
+    },
+    {
+      "source": "94112458",
+      "target": "493ad53a"
+    },
+    {
+      "source": "aed46479",
+      "target": "94112458"
+    },
+    {
+      "source": "7b2c6e04",
+      "target": "28754fab"
+    },
+    {
+      "source": "28754fab",
+      "target": "23c94afb"
+    },
+    {
+      "source": "c071dac9",
+      "target": "28754fab"
+    },
+    {
+      "source": "f1d596c2",
+      "target": "acdb05cf"
+    }
+  ],
+  "layers": [],
+  "tags": [],
+  "pipelines": [
+    {
+      "id": "__default__",
+      "name": "__default__"
+    },
+    {
+      "id": "data_processing",
+      "name": "data_processing"
+    }
+  ],
+  "modular_pipelines": {
+    "__root__": {
+      "id": "__root__",
+      "name": "__root__",
+      "inputs": [],
+      "outputs": [],
+      "children": [
+        {
+          "id": "c071dac9",
+          "type": "data"
+        },
+        {
+          "id": "493ad53a",
+          "type": "data"
+        },
+        {
+          "id": "f1d596c2",
+          "type": "data"
+        },
+        {
+          "id": "acdb05cf",
+          "type": "task"
+        },
+        {
+          "id": "28754fab",
+          "type": "task"
+        },
+        {
+          "id": "94112458",
+          "type": "task"
+        },
+        {
+          "id": "aed46479",
+          "type": "data"
+        },
+        {
+          "id": "23c94afb",
+          "type": "data"
+        },
+        {
+          "id": "7b2c6e04",
+          "type": "data"
+        }
+      ]
+    }
+  },
+  "selected_pipeline": "__default__"
+}
